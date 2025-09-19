@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/src/Account.java">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/Account.java" />
+              <option name="originalContent" value="public class Account {&#10;    // 帳戶號碼，唯一識別每個帳戶&#10;    private String accountNumber;&#10;    // 帳戶餘額，儲存目前帳戶的金額&#10;    private double balance;&#10;&#10;    /**&#10;     * 建構子：初始化帳戶號碼與初始餘額&#10;     * @param accountNumber 帳戶號碼&#10;     * @param initialBalance 初始餘額&#10;     */&#10;    public Account(String accountNumber, double initialBalance) {&#10;        this.accountNumber = accountNumber; // 設定帳戶號碼&#10;        this.balance = initialBalance;      // 設定初始餘額&#10;    }&#10;&#10;    /**&#10;     * 取得帳戶號碼&#10;     * @return 帳戶號碼&#10;     */&#10;    public String getAccountNumber() {&#10;        return accountNumber;&#10;    }&#10;&#10;    /**&#10;     * 取得帳戶餘額&#10;     * @return 帳戶餘額&#10;     */&#10;    public double getBalance() {&#10;        return balance;&#10;    }&#10;&#10;    /**&#10;     * 存款方法：將指定金額存入帳戶&#10;     * @param amount 存款金額，必須大於0&#10;     * @throws IllegalArgumentException 如果存款金額小於等於0&#10;     */&#10;    public void deposit(double amount) {&#10;        if (amount &gt; 0) {&#10;            balance += amount; // 增加帳戶餘額&#10;        } else {&#10;            throw new IllegalArgumentException(&quot;存款金額必須為正數&quot;);&#10;        }&#10;    }&#10;&#10;    /**&#10;     * 提款方法：從帳戶扣除指定金額&#10;     * @param amount 提款金額，必須大於0且小於等於餘額&#10;     * @throws IllegalArgumentException 如果提款金額不合法&#10;     */&#10;    public void withdraw(double amount) {&#10;        if (amount &gt; 0 &amp;&amp; amount &lt;= balance) {&#10;            balance -= amount; // 減少帳戶餘額&#10;        } else {&#10;            throw new IllegalArgumentException(&quot;提款金額不合法&quot;);&#10;        }&#10;    }&#10;}&#10;" />
+              <option name="updatedContent" value="public class Account {&#10;    // 帳戶號碼，唯一識別每個帳戶&#10;    private String accountNumber;&#10;    // 帳戶餘額，儲存目前帳戶的金額&#10;    private double balance;&#10;&#10;    /**&#10;     * 建構子：初始化帳戶號碼與初始餘額&#10;     * @param accountNumber 帳戶號碼&#10;     * @param initialBalance 初始餘額&#10;     */&#10;    public Account(String accountNumber, double initialBalance) {&#10;        this.accountNumber = accountNumber; // 設定帳戶號碼&#10;        this.balance = initialBalance;      // 設定初始餘額&#10;    }&#10;&#10;    /**&#10;     * 取得帳戶號碼&#10;     * @return 帳戶號碼&#10;     */&#10;    public String getAccountNumber() {&#10;        return accountNumber;&#10;    }&#10;&#10;    /**&#10;     * 取得帳戶餘額&#10;     * @return 帳戶餘額&#10;     */&#10;    public double getBalance() {&#10;        return balance;&#10;    }&#10;&#10;    /**&#10;     * 存款方法：將指定金額存入帳戶&#10;     * @param amount 存款金額，必須大於0&#10;     * @throws IllegalArgumentException 如果存款金額小於等於0&#10;     */&#10;    public void deposit(double amount) {&#10;        if (amount &gt; 0) {&#10;            balance += amount; // 增加帳戶餘額&#10;        } else {&#10;            throw new IllegalArgumentException(&quot;存款金額必須為正數&quot;);&#10;        }&#10;    }&#10;&#10;    /**&#10;     * 提款方法：從帳戶扣除指定金額&#10;     * @param amount 提款金額，必須大於0且小於等於餘額&#10;     * @throws IllegalArgumentException 如果提款金額不合法&#10;     */&#10;    public void withdraw(double amount) {&#10;        if (amount &gt; 0 &amp;&amp; amount &lt;= balance) {&#10;            balance -= amount; // 減少帳戶餘額&#10;        } else {&#10;            throw new IllegalArgumentException(&quot;提款金額不合法&quot;);&#10;        }&#10;    }&#10;}" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
