@@ -1,8 +1,11 @@
+import java.util.Scanner;
+
 public class Account {
     // 帳戶號碼，唯一識別每個帳戶
     private String accountNumber;
     // 帳戶餘額，儲存目前帳戶的金額
     private double balance;
+    private static final Scanner scanner = new Scanner(System.in);
 
     /**
      * 建構子：初始化帳戶號碼與初始餘額
@@ -40,8 +43,18 @@ public class Account {
      * @throws IllegalArgumentException 如果餘額小於等於0
      */
     public void setBalance(double balance) {
+        int attempts = 0;
+        while (balance <= 0 && attempts < 3) {
+            System.out.println("餘額必須為正數，請重新輸入：");
+            try {
+                balance = Double.parseDouble(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                balance = -1;
+            }
+            attempts++;
+        }
         if (balance > 0) {
-            this.balance = balance; // 設定帳戶餘額
+            this.balance = balance;
         } else {
             throw new IllegalArgumentException("餘額必須為正數");
         }
@@ -61,6 +74,16 @@ public class Account {
      * @throws IllegalArgumentException 如果存款金額小於等於0
      */
     public void deposit(double amount) {
+        int attempts = 0;
+        while (amount <= 0 && attempts < 3) {
+            System.out.println("存款金額必須為正數，請重新輸入：");
+            try {
+                amount = Double.parseDouble(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                amount = -1;
+            }
+            attempts++;
+        }
         if (amount > 0) {
             balance += amount; // 增加帳戶餘額
         } else {
@@ -74,6 +97,16 @@ public class Account {
      * @throws IllegalArgumentException 如果提款金額不合法
      */
     public void withdraw(double amount) {
+        int attempts = 0;
+        while ((amount <= 0 || amount > balance) && attempts < 3) {
+            System.out.println("提款金額不合法，請重新輸入(必須大於0且小於等於餘額)：");
+            try {
+                amount = Double.parseDouble(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                amount = -1;
+            }
+            attempts++;
+        }
         if (amount > 0 && amount <= balance) {
             balance -= amount; // 減少帳戶餘額
         } else {
